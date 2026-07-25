@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #111827;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .quiz-card {
+            width: min(760px, 100%);
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+            overflow: hidden;
+        }
+        .quiz-header {
+            padding: 32px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            text-align: center;
+        }
+        .quiz-header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .quiz-header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        .quiz-body {
+            padding: 32px;
+        }
+        .question {
+            margin-bottom: 28px;
+        }
+        .question h2 {
+            margin: 0 0 12px;
+            font-size: 1.1rem;
+        }
+        .option {
+            display: block;
+            margin-bottom: 10px;
+            padding: 14px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .option:hover {
+            background: #eef2ff;
+            border-color: #c7d2fe;
+        }
+        .option input {
+            margin-right: 12px;
+        }
+        .submit-button {
+            border: none;
+            background: #4f46e5;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background: #4338ca;
+        }
+        .result {
+            margin-top: 24px;
+            padding: 18px 20px;
+            border-radius: 16px;
+            background: #ecfdf5;
+            color: #166534;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <article class="quiz-card">
+        <header class="quiz-header">
+            <h1>Basic Quiz</h1>
+            <p>Choose the best answer and submit to see your score.</p>
+        </header>
+        <section class="quiz-body">
+            <form id="quizForm">
+                <div class="question">
+                    <h2>1. What is the tag used for a radio button in HTML?</h2>
+                    <label class="option"><input type="radio" name="q1" value="input"> &lt;input&gt;</label>
+                    <label class="option"><input type="radio" name="q1" value="radio"> &lt;radio&gt;</label>
+                    <label class="option"><input type="radio" name="q1" value="button"> &lt;button&gt;</label>
+                </div>
+                <div class="question">
+                    <h2>2. Which attribute groups radio options together?</h2>
+                    <label class="option"><input type="radio" name="q2" value="type"> type</label>
+                    <label class="option"><input type="radio" name="q2" value="name"> name</label>
+                    <label class="option"><input type="radio" name="q2" value="id"> id</label>
+                </div>
+                <div class="question">
+                    <h2>3. Which value makes an input a radio button?</h2>
+                    <label class="option"><input type="radio" name="q3" value="button"> button</label>
+                    <label class="option"><input type="radio" name="q3" value="radio"> radio</label>
+                    <label class="option"><input type="radio" name="q3" value="checkbox"> checkbox</label>
+                </div>
+                <div class="question">
+                    <h2>4. Which attribute sets a label text for accessibility?</h2>
+                    <label class="option"><input type="radio" name="q4" value="id"> id</label>
+                    <label class="option"><input type="radio" name="q4" value="for"> for</label>
+                    <label class="option"><input type="radio" name="q4" value="class"> class</label>
+                </div>
+                <div class="question">
+                    <h2>5. What value must the name attribute share?</h2>
+                    <label class="option"><input type="radio" name="q5" value="same"> same</label>
+                    <label class="option"><input type="radio" name="q5" value="different"> different</label>
+                    <label class="option"><input type="radio" name="q5" value="optional"> optional</label>
+                </div>
+                <div class="question">
+                    <h2>6. Which HTML element contains the radio input?</h2>
+                    <label class="option"><input type="radio" name="q6" value="label"> &lt;label&gt;</label>
+                    <label class="option"><input type="radio" name="q6" value="select"> &lt;select&gt;</label>
+                    <label class="option"><input type="radio" name="q6" value="fieldset"> &lt;fieldset&gt;</label>
+                </div>
+                <div class="question">
+                    <h2>7. What happens when only one radio in a group is selected?</h2>
+                    <label class="option"><input type="radio" name="q7" value="all"> all stay selected</label>
+                    <label class="option"><input type="radio" name="q7" value="one"> only one stays selected</label>
+                    <label class="option"><input type="radio" name="q7" value="none"> none stay selected</label>
+                </div>
+                <button type="submit" class="submit-button">Submit Answers</button>
+                <div class="result" id="resultBox"></div>
+            </form>
+        </section>
+    </article>
+</body>
+</html>
